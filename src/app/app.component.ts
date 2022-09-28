@@ -6,7 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  name = 'Angular';
+  clock=""
+  clockHandle: NodeJS.Timer|undefined;
 
+  ngOnInit(){
+    this.clockHandle = setInterval(()=>{
+      this.clock = new Date().toLocaleString();
+    },1000);
+  }
 }
 
 
